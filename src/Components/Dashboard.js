@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 import _ from 'lodash';
+import MapView from './MapView';
 
 const styles = {
     Paper: {padding: 20, marginBottom: 10, height : 450, overflowY:"auto"},
@@ -44,7 +45,7 @@ export default class Dashborad extends Component {
     render(){
     return (
         <React.Fragment>
-            <Grid container>
+            {this.props.view.defaultView && <Grid container>
                     <Grid item xs>
                         <Paper style={styles.Paper}>
                             {this.state.isDataReceived && 
@@ -66,7 +67,8 @@ export default class Dashborad extends Component {
                         }
                         </Paper>          
                     </Grid>
-            </Grid>
+            </Grid>}
+            { this.props.view.mapView && <MapView countries = {this.state.countries} />}
         </React.Fragment>
     )
 }
