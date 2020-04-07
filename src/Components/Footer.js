@@ -16,7 +16,7 @@ export default function Footer(){
   const classes = useStyles();
     return (
         <React.Fragment>
-          <footer className={classes.root}>© 2020 COVID-19 Information is not for offical purpose</footer>
+          <footer className={classes.root}>© 2020 Amod Y (COVID-19 Information is not for offical purpose)</footer>
         </React.Fragment>
         )
 }
